@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "f2817643-86a1-493d-916c-fdba061ab053",
+		"name": "event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findAvailableEvent no distance limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/findAvailableEvent?startTime=2021-04-15T13:00:00&lat=22.319237399968028&long=114.16940435293854&numberOfPeople=1&maxDistKm=-1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"findAvailableEvent"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "2021-04-15T13:00:00"
+						},
+						{
+							"key": "lat",
+							"value": "22.319237399968028"
+						},
+						{
+							"key": "long",
+							"value": "114.16940435293854"
+						},
+						{
+							"key": "numberOfPeople",
+							"value": "1"
+						},
+						{
+							"key": "maxDistKm",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/events",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAvailableEvent within 2km",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/findAvailableEvent?startTime=2021-04-15T13:00:00&lat=22.319237399968028&long=114.16940435293854&numberOfPeople=1&maxDistKm=2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"findAvailableEvent"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "2021-04-15T13:00:00"
+						},
+						{
+							"key": "lat",
+							"value": "22.319237399968028"
+						},
+						{
+							"key": "long",
+							"value": "114.16940435293854"
+						},
+						{
+							"key": "numberOfPeople",
+							"value": "1"
+						},
+						{
+							"key": "maxDistKm",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addEvent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startTime\":\"2021-04-16T13:00:00\",\n    \"endTime\":\"2021-04-16T15:00:00\",\n    \"lat\":22.302026557871528,\n    \"long\":114.17038697783491,\n    \"eventName\":\"Kowloon Park show\",\n    \"organiszerName\":\"GOV\",\n    \"maxPeople\":30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/addEvent",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addEvent"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
